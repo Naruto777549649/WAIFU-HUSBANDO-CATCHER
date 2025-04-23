@@ -33,11 +33,20 @@ async def upload(update: Update, context: CallbackContext) -> None:
         await update.message.reply_text('Ask My Owner...')
         return
 
-   try:
-    urllib.request.urlopen(args[0])
-except:
-    await update.message.reply_text('Invalid URL.')
-    return
+    try:
+        args = context.args
+        if len(args) != 4:
+            await update.message.reply_text(WRONG_FORMAT_TEXT)
+            return
+
+        character_name = args[1].replace('-', ' ').title()
+        anime = args[2].replace('-', ' ').title()
+
+        try:
+            urllib.request.urlopen(args[0])
+        except:
+            await update.message.reply_text('Invalid URL.')
+            return
 
         rarity_map = {1: "⚪ Common", 2: "🟣 Rare", 3: "🟡 Legendary", 4: "🟢 Medium"}
         try:
@@ -69,7 +78,7 @@ except:
         except:
             await collection.insert_one(character)
             update.effective_message.reply_text("Character Added but no Database Channel Found, Consider adding one.")
-        
+
     except Exception as e:
         await update.message.reply_text(f'Character Upload Unsuccessful. Error: {str(e)}\nIf you think this is a source error, forward to: {SUPPORT_CHAT}')
 
@@ -84,11 +93,11 @@ async def delete(update: Update, context: CallbackContext) -> None:
             await update.message.reply_text('Incorrect format... Please use: /delete ID')
             return
 
-        
+
         character = await collection.find_one_and_delete({'id': args[0]})
 
         if character:
-            
+
             await context.bot.delete_message(chat_id=CHARA_CHANNEL_ID, message_id=character['message_id'])
             await update.message.reply_text('DONE')
         else:
@@ -134,7 +143,7 @@ async def update(update: Update, context: CallbackContext) -> None:
 
         await collection.find_one_and_update({'id': args[0]}, {'$set': {args[1]: new_value}})
 
-        
+
         if args[1] == 'img_url':
             await context.bot.delete_message(chat_id=CHARA_CHANNEL_ID, message_id=character['message_id'])
             message = await context.bot.send_photo(
@@ -146,7 +155,7 @@ async def update(update: Update, context: CallbackContext) -> None:
             character['message_id'] = message.message_id
             await collection.find_one_and_update({'id': args[0]}, {'$set': {'message_id': message.message_id}})
         else:
-            
+
             await context.bot.edit_message_caption(
                 chat_id=CHARA_CHANNEL_ID,
                 message_id=character['message_id'],
