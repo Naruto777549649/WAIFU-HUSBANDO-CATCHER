@@ -33,19 +33,10 @@ async def upload(update: Update, context: CallbackContext) -> None:
         await update.message.reply_text('Ask My Owner...')
         return
 
-    try:
-        args = context.args
-        if len(args) != 4:
-            await update.message.reply_text(WRONG_FORMAT_TEXT)
-            return
-
-        character_name = args[1].replace('-', ' ').title()
-        anime = args[2].replace('-', ' ').title()
-
-        valid_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp')
-
-if not args[0].lower().endswith(valid_extensions):
-    await update.message.reply_text('Invalid image URL. Must end with .jpg, .png, .gif etc.')
+   try:
+    urllib.request.urlopen(args[0])
+except:
+    await update.message.reply_text('Invalid URL.')
     return
 
         rarity_map = {1: "⚪ Common", 2: "🟣 Rare", 3: "🟡 Legendary", 4: "🟢 Medium"}
