@@ -8,8 +8,8 @@
 
 
 _**Available On Telegram As 
-[Collect Em all](https://t.me/Collect_em_AllBot) and**_
-_Ask for Help in our [Support Chat](https://t.me/Collect_em_support)_
+[Collect Em all](@Mikasa_waifu_collectorbot) and**_
+_Ask for Help in our [Support Chat](@Mikasa_waifu_collectorbot)_
 
 ## About The Repository
 ● This is an Open Source Implementation of Character Catcher Bot for Telegram
