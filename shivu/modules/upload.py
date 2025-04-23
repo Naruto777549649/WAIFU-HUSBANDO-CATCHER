@@ -42,7 +42,8 @@ async def upload(update: Update, context: CallbackContext) -> None:
         character_name = args[1].replace('-', ' ').title()
         anime = args[2].replace('-', ' ').title()
 
-        valid_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.webp')
+        valid_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp')
+
 if not args[0].lower().endswith(valid_extensions):
     await update.message.reply_text('Invalid image URL. Must end with .jpg, .png, .gif etc.')
     return
