@@ -6,7 +6,7 @@ class Config(object):
     sudo_users = "6239769036", "1514849521", "7019600964"
     GROUP_ID = -1002304401488
     TOKEN = "7851576039:AAFv6o74rF5Ej0DP_aa7AAHgDYXKorkbbj8"
-    mongo_url = "mongodb+srv://HaremDBBot:ThisIsPasswordForHaremDB@haremdb.swzjngj.mongodb.net/?retryWrites=true&w=majority"
+    mongo_url = "mongodb+srv://sufyan532011:2010@dbz.28ftn.mongodb.net/?retryWrites=true&w=majority&appName=DBZ"
     PHOTO_URL = ["https://files.catbox.moe/olhyw5.jpg"]
     SUPPORT_CHAT = "animaction_world_in_2025"
     UPDATE_CHAT = "harmonyheaven03"
