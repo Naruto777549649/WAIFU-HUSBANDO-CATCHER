@@ -84,7 +84,7 @@ async def upload(update: Update, context: CallbackContext) -> None:
 
 async def delete(update: Update, context: CallbackContext) -> None:
     if str(update.effective_user.id) not in sudo_users:
-        await update.message.reply_text('Ask my Owner to use this Command...')
+        await update.message.reply_text('Ask my Owner to use this Command @Uzunaki_X_Naruto_6...')
         return
 
     try:
