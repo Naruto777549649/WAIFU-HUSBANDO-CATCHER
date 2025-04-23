@@ -46,11 +46,11 @@ async def start(update: Update, context: CallbackContext) -> None:
         """
         
         keyboard = [
-            [InlineKeyboardButton(""🚀 𝘼𝘿𝘿 𝙈𝙀"", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
-            [InlineKeyboardButton(""🛡️ 𝐒𝐔𝐏𝐏𝐎𝐑𝐓"", url=f'https://t.me/{SUPPORT_CHAT}'),
-            InlineKeyboardButton(""📢 𝗨𝗣𝗗𝗔𝗧𝗘𝗦"", url=f'https://t.me/{UPDATE_CHAT}')],
-            [InlineKeyboardButton("HELP", callback_data='help')],
-            [InlineKeyboardButton(""💻 𝗦𝗢𝗨𝗥𝗖𝗘"", url=f'https://github.com/Naruto777549649/WAIFU-HUSBANDO-CATCHER')]
+            [InlineKeyboardButton("🚀 𝘼𝘿𝘿 𝙈𝙀", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
+            [InlineKeyboardButton("🛡️ 𝐒𝐔𝐏𝐏𝐎𝐑𝐓", url=f'https://t.me/{SUPPORT_CHAT}'),
+            InlineKeyboardButton("📢 𝗨𝗣𝗗𝗔𝗧𝗘𝗦", url=f'https://t.me/{UPDATE_CHAT}')],
+            [InlineKeyboardButton("❓ 𝗛𝗘𝗟𝗣", callback_data='help')],
+            [InlineKeyboardButton("💻 𝗦𝗢𝗨𝗥𝗖𝗘", url=f'https://github.com/Naruto777549649/WAIFU-HUSBANDO-CATCHER')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         photo_url = random.choice(PHOTO_URL)
