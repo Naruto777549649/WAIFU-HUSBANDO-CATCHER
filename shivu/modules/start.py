@@ -34,7 +34,7 @@ async def start(update: Update, context: CallbackContext) -> None:
         
         
         caption = f"""
-        ***🎐 ʜᴇʏ ᴛʜᴇʀᴇ...! {name}...***
+        ***f"ʜᴇʏ ᴛʜᴇʀᴇ...!🔮 {message.from_user.first_name}\n\n"***
 
 ***◎ ─━──━─❖─━──━─ ◎
 ⍟ ɪ ᴀᴍ ᴄᴀᴛᴄʜ ʏᴏᴜʀ ᴡᴀɪғᴜ ʙᴏᴛ,
